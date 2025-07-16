@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: wanderlust-app
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: nodemon app.js
+    branch: main
