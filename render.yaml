@@ -4,5 +4,5 @@ services:
     env: node
     plan: free
     buildCommand: npm install
-    startCommand: nodemon app.js
+    startCommand: node app.js
     branch: main
