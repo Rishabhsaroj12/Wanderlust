@@ -9,7 +9,8 @@
         border-radius: 1rem;
         height: 3.25rem;
         padding: 1rem;
-        margin-left: 2rem;
+        margin: 0.5rem;
+        background: #f8f9fa;
         display: flex;
         align-items: center;
     }
@@ -17,7 +18,45 @@
 
     
 
-        <!-- Filters for desktop -->
+        <!-- Responsive Filters -->
+        <style>
+        @media (max-width: 768px) {
+            #filters {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.7rem 1.2rem;
+                padding-bottom: 0.5rem;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            #filters .filter {
+                width: 28vw;
+                max-width: 70px;
+                min-width: 50px;
+                flex: 0 0 auto;
+                align-items: center;
+                justify-content: center;
+                padding: 0.3rem 0.1rem;
+                border-radius: 0.7rem;
+                background: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                margin-bottom: 0.15rem;
+            }
+            #filters .filter i {
+                font-size: 1.1rem;
+            }
+            #filters .filter p {
+                font-size: 0.7rem;
+                margin-bottom: 0;
+            }
+            .tax-toggle {
+                min-width: 180px;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+        </style>
         <div id="filters">
             <div class="filter">
                 <div><i class="fa-solid fa-fire"></i></div>
@@ -26,10 +65,6 @@
             <div class="filter">
                 <div><i class="fa-solid fa-bed"></i></div>
                 <p>Rooms</p>
-            </div>
-            <div class="filter">
-                <div><i class="fa-solid fa-mountain-city"></i></div>
-                <p>Iconic cities</p>
             </div>
             <div class="filter">
                 <div><i class="fa-solid fa-mountain"></i></div>

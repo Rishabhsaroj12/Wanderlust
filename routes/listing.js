@@ -1,3 +1,4 @@
+// ...existing code...
 const express = require('express');
 const router = express.Router();
 const wrapAsync = require("../utils/wrapasync.js");
@@ -10,12 +11,18 @@ const upload = multer({ storage })
 const Listing = require("../models/listing");
 const { isLoggedIn, isowner, validateListing } = require("../middleware.js");
 
+// Search listings by location
+router.get("/search", wrapAsync(listingController.searchByLocation));
+
+
 router.route("/")
-     .get( wrapAsync(listingController.index))
-     .post( isLoggedIn,
+    .get(wrapAsync(listingController.index))
+    .post(
+        isLoggedIn,
         upload.single("listing[image]"),
-         validateListing,
-        wrapAsync(listingController.createlisting));
+        validateListing,
+        wrapAsync(listingController.createlisting)
+    );
 
      // new route
 router.get("/new", isLoggedIn, listingController.renderNewform);

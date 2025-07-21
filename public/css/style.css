@@ -1,3 +1,20 @@
+/* Make the mobile menu button (navbar-toggler) black */
+.navbar-toggler {
+    border: 2px solid #000 !important;
+    background: #000 !important;
+    border-radius: 0.7rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 0.6rem 1.1rem !important;
+    font-size: 1.5rem !important;
+    color: #fff !important;
+    margin-right: 0.5rem;
+    transition: background 0.2s, border 0.2s;
+}
+.navbar-toggler:focus, .navbar-toggler:hover {
+    background: #222 !important;
+    color: #fff !important;
+    border-color: #222 !important;
+}
 body{
      font-family: "Plus Jakarta Sans", sans-serif !important;
      display: flex;
@@ -38,10 +55,45 @@ body{
     align-items: center;
     justify-content: center;
 }
-.f-info-socials i{
-     font-size: 1.2rem;
-    margin-right: 1rem;
-    
+.f-info-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.f-info-socials i {
+    font-size: 1.5rem;
+    margin: 0 0.2rem;
+}
+/* Responsive icon placement for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .nav-link {
+        padding: 0.7rem 1.2rem;
+        width: 100%;
+        text-align: left;
+    }
+    .fa-compass {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .f-info-socials {
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 0.7rem;
+    }
+    .f-info-socials i {
+        font-size: 1.7rem;
+    }
 }
 .f-info{
     text-align: center;
@@ -177,7 +229,7 @@ body{
             margin-right: 0;
         }
         .sidebar .tax-toggel {
-            margin-left: 1.2rem;
+            margin-left: 0.3rem;
         }
         .sidebar-close {
             position: absolute;
@@ -194,7 +246,7 @@ body{
             top: 15px;
             left: 15px;
             z-index: 2100;
-            background: #fff;
+            background: pink;
             border: none;
             font-size: 2rem;
             cursor: pointer;

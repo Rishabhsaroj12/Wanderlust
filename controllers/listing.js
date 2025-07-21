@@ -1,3 +1,14 @@
+// Search listings by location
+module.exports.searchByLocation = async (req, res) => {
+    const { location } = req.query;
+    let alllistings;
+    if (location && location.trim() !== "") {
+        alllistings = await Listing.find({ location: { $regex: location, $options: "i" } });
+    } else {
+        alllistings = await Listing.find({});
+    }
+    res.render("listings/index", { alllistings });
+};
 const Listing = require("../models/listing");
 const mbxGeocoding= require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
