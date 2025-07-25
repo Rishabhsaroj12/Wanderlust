@@ -1,3 +1,12 @@
+@media (max-width: 400px) {
+    .f-info-socials {
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .f-info-socials i {
+        font-size: 1.2rem;
+    }
+}
 /* Make the mobile menu button (navbar-toggler) black */
 .navbar-toggler {
     border: 2px solid #000 !important;
@@ -20,7 +29,7 @@ body{
      display: flex;
      flex-direction: column;
      min-height: 100vh;
-     
+     scroll-behavior: smooth;
 }
 .container{
     flex: 1;
@@ -111,10 +120,23 @@ body{
    border: none !important;
    margin-bottom: 2rem;
    position: relative;
+   border-radius: 1.2rem !important;
+   /* Initial state for animation */
+   opacity: 0;
+   transform: scale(0.95) translateY(30px);
+   transition: opacity 0.5s cubic-bezier(0.77,0,0.175,1), transform 0.5s cubic-bezier(0.77,0,0.175,1);
 }
 
+/* Animated state */
+.listing-card.animate {
+   opacity: 1;
+   transform: scale(1) translateY(0);
+}
+
+
+
 .card-img-top{
-    border-radius: 1rem !important;
+    border-radius: 1.2rem !important;
     width: 100% !important;
     object-fit: cover !important;
 }
